@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Menu from './Menu';
 import Login from './Login';
 
@@ -14,9 +14,13 @@ class App extends React.Component {
         return <div>
             <Menu items={menuItems} />
             <Login />
-
         </div>;
     }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
